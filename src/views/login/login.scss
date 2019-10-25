@@ -1,0 +1,49 @@
+.login {
+    background: rgb(67,192,255);
+    height: 100%;
+    text-align: center;
+    &-header {
+        .grid-content {
+            margin-top: 10%;
+        }
+    }
+    &-form {
+        border-radius: 6px;
+        background: #ffffff;
+        margin: 100px auto 0 auto;
+
+        width: 400px;
+        padding: 25px 25px 5px 25px;
+        .el-input {
+            height: 38px;
+            input {
+                height: 38px;
+            }
+        }
+        .input-icon {
+            height: 39px;
+            width: 14px;
+            margin-left: 2px;
+        }
+    }
+    &-tip {
+        font-size: 13px;
+        text-align:center;
+        color: #bfbfbf;
+    }
+    &-code {
+        width: 33%;
+        display: inline-block;
+        height: 38px;
+        float: right;
+        img{
+            cursor: pointer;
+            vertical-align:middle
+        }
+    }
+}
+.title {
+    margin: 0 auto 30px auto;
+    text-align: center;
+    color: #707070;
+}
