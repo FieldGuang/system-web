@@ -19,6 +19,9 @@ npm install --save normalize.css
 - 优化CSS可用性：用一些小技巧
 - 解释代码：用注释和详细的文档来
 
+## screenfull.js实现全屏功能（vue项目中运用）
+在命令行中执行：npm install --save screenfull   （注：因为这是生产依赖，所以执行--save）
+
 ## webstorm配置eslint
  1. 点击settings->pluings ->搜索eslint-> Install安装
  2. 安装好之后，找到settings中ESLint，选中，就会进入配置页面，勾选Enable->第一项配置自己安装nodejs目录下node.exe,第二项配置当前项目中node_modules/.bin目录下的eslint.cmd，第三项改成.eslintrc.js

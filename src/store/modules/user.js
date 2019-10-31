@@ -8,6 +8,7 @@ const user = {
      token: '',
      user: {},
      roles: [],
+     avator: process.env.VUE_APP_BASE_API,
      // 第一次加载菜单时用到
      loadMenus: false
   },
@@ -21,6 +22,9 @@ const user = {
     },
     SET_ROLES: (state, roles) => {
       state.roles = roles
+    },
+    SET_AVATAR: (state, avatar) => {
+      state.avatar = avatar
     },
     SET_LOAD_MENUS: (state, loadMenus) => {
       state.loadMenus = loadMenus

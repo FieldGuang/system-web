@@ -1,18 +1,61 @@
+$form-width: 360px;
+$background: rgba(239,247,252,1);
+$background-main: rgba(250,253,255,1);
 .login {
-    background: rgb(67,192,255);
+    background: $background-main;
     height: 100%;
     text-align: center;
+    .main {
+        height: 70%;
+        position: relative;
+        z-index: 2;
+        //background: $background-main;
+    }
+
+    .bottom {
+        background: $background;
+        position: relative;
+        z-index: 1;
+        height: 30%;
+        overflow: hidden;
+        .copy {
+            .copyRight {
+                font-size:14px;
+                font-family:PingFangSC-Regular,PingFang SC;
+                font-weight:400;
+                color:rgba(153,153,153,1);
+                line-height:20px;
+
+            }
+        }
+
+    }
+
     &-header {
-        .grid-content {
-            margin-top: 10%;
+        img {
+            margin-top: 30px;
+            width: 150px;
+        }
+    }
+    &-left {
+        img {
+            width: $form-width + 160;
+            margin-top: 40px;
+        }
+    }
+    &-logo {
+        img {
+            width: $form-width*(1/2);
+            margin-bottom: 40px;
         }
     }
     &-form {
+
         border-radius: 6px;
         background: #ffffff;
         margin: 100px auto 0 auto;
-
-        width: 400px;
+        box-shadow: #e6e7e9 -1px 1px 10px;
+        width: 360px;
         padding: 25px 25px 5px 25px;
         .el-input {
             height: 38px;
