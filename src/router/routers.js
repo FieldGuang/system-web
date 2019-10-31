@@ -151,13 +151,13 @@ export const constantRoutes = [
         path: 'locationType',
         component: locationTypeManage,
         name: '位置类型管理',
-        meta: { title: '设备日志', icon: 'fwb', affix: true }
+        meta: { title: '位置类型管理', icon: 'fwb', affix: true }
       },
       {
         path: 'operateType',
         component: operateType,
         name: '动作类型管理',
-        meta: { title: '接口日志', icon: 'fwb', affix: true }
+        meta: { title: '动作类型管理', icon: 'fwb', affix: true }
       }
     ]
   },

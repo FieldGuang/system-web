@@ -7,7 +7,7 @@
         justify="left"
       >
         <el-col :span="5">
-            <img src="../../assets/background/logo-banner.png">
+          <img src="../../assets/background/logo-banner.png">
         </el-col>
       </el-row>
       <el-row
@@ -67,15 +67,31 @@
               </el-input>
             </el-form-item>
             <el-form-item prop="code">
-              <el-input v-model="loginForm.code" auto-complete="off" placeholder="验证码" style="width: 63%" @keyup.enter.native="handleLogin">
-                <svg-icon slot="prefix" icon-class="validCode" class="el-input__icon input-icon" />
+              <el-input
+                v-model="loginForm.code"
+                auto-complete="off"
+                placeholder="验证码"
+                style="width: 63%"
+                @keyup.enter.native="handleLogin"
+              >
+                <svg-icon
+                  slot="prefix"
+                  icon-class="validCode"
+                  class="el-input__icon input-icon"
+                />
               </el-input>
               <!--验证码需求-->
               <div class="login-code">
-                <img :src="codeUrl" @click="getCode">
+                <img
+                  :src="codeUrl"
+                  @click="getCode"
+                >
               </div>
             </el-form-item>
-            <el-form-item :gutter="24" style="margin-bottom: 0; padding-bottom: 0;">
+            <el-form-item
+              :gutter="24"
+              style="margin-bottom: 0; padding-bottom: 0;"
+            >
               <el-col :span="8">
                 <el-checkbox
                   v-model="loginForm.rememberMe"
@@ -84,8 +100,13 @@
                   记住密码
                 </el-checkbox>
               </el-col>
-              <el-col :span="10" :offset="6">
-                <el-button type="text">忘记密码？</el-button>
+              <el-col
+                :span="10"
+                :offset="6"
+              >
+                <el-button type="text">
+                  忘记密码？
+                </el-button>
               </el-col>
             </el-form-item>
             <el-form-item style="width:100%;">
@@ -105,7 +126,7 @@
       </el-row>
     </div>
     <div class="bottom">
-      <el-row type="flex" >
+      <el-row type="flex">
         <el-col class="copy">
           <!--<span class="copyRight">@博智林机器人数据平台组 版权归属</span>-->
         </el-col>
