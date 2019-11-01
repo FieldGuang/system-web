@@ -55,7 +55,17 @@ export const constantRoutes = [
     component: () => import('@/views/error-page/401'),
     hidden: true
   },
-
+  {
+    path: '/redirect',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '/redirect/:path*',
+        component: () => import('@/views/error-page/redirect')
+      }
+    ]
+  },
   {
     path: '/',
     component: Layout,
@@ -80,7 +90,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/user/index'),
         name: '个人中心',
-        meta: { title: '用户', icon: 'dev', noCache: true, affix: true },
+        meta: { title: '用户', icon: 'dev', noCache: true },
         hidden: false
       },
     ]
@@ -97,7 +107,7 @@ export const constantRoutes = [
         path: 'index',
         component: monitorPlatform,
         name: '监控',
-        meta: { title: '监控平台', icon: 'fwb', affix: true }
+        meta: { title: '监控平台', icon: 'fwb'}
       }
     ]
   },
@@ -113,7 +123,7 @@ export const constantRoutes = [
         path: 'index',
         component: Order,
         name: 'Documentation',
-        meta: { title: '订单管理', icon: 'fwb', affix: true }
+        meta: { title: '订单管理', icon: 'fwb' }
       }
     ]
   },
@@ -129,13 +139,13 @@ export const constantRoutes = [
         path: 'device',
         component: deviceLog,
         name: '设备日志',
-        meta: { title: '设备日志', icon: 'fwb', affix: true }
+        meta: { title: '设备日志', icon: 'fwb' }
       },
       {
         path: 'interface',
         component: interfaceLog,
         name: '接口日志',
-        meta: { title: '接口日志', icon: 'fwb', affix: true }
+        meta: { title: '接口日志', icon: 'fwb' }
       }
     ]
   },
@@ -151,13 +161,13 @@ export const constantRoutes = [
         path: 'locationType',
         component: locationTypeManage,
         name: '位置类型管理',
-        meta: { title: '位置类型管理', icon: 'fwb', affix: true }
+        meta: { title: '位置类型管理', icon: 'fwb' }
       },
       {
         path: 'operateType',
         component: operateType,
         name: '动作类型管理',
-        meta: { title: '动作类型管理', icon: 'fwb', affix: true }
+        meta: { title: '动作类型管理', icon: 'fwb' }
       }
     ]
   },
@@ -173,7 +183,7 @@ export const constantRoutes = [
         path: 'index',
         component: deviceManage,
         name: 'device',
-        meta: { title: '设备管理', icon: 'fwb', affix: true }
+        meta: { title: '设备列表', icon: 'fwb' }
       }
     ]
   }

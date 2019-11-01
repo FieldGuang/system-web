@@ -46,7 +46,10 @@
       ...mapState({
         sidebar: state => state.app.sidebar,
         device: state => state.app.device,
-        needTagsView: state => state.settings.tagsView,
+        needTagsView: state => {
+          console.log('ddddddd', state.settings.tagsView)
+          return state.settings.tagsView;
+        },
         fixedHeader: state => state.settings.fixedHeader
       }),
       classObj() {

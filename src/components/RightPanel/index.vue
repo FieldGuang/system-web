@@ -1,11 +1,24 @@
 <template>
-  <div ref="rightPanel" :class="{show:show}" class="rightPanel-container">
+  <div
+    ref="rightPanel"
+    :class="{show:show}"
+    class="rightPanel-container"
+  >
     <div class="rightPanel-background" />
     <div class="rightPanel">
-      <div v-if="settingBtn" :style="{'top':buttonTop+'px','background-color':theme}" class="handle-button" @click="show=!show">
+      <div
+        v-if="settingBtn"
+        :style="{'top':buttonTop+'px','background-color':theme}"
+        class="handle-button"
+        @click="show=!show"
+      >
         <i :class="show?'el-icon-close':'el-icon-setting'" />
       </div>
-      <div v-else :style="{'top':buttonTop+'px'}" @click="show=!show"/>
+      <div
+        v-else
+        :style="{'top':buttonTop+'px'}"
+        @click="show=!show"
+      />
       <div class="rightPanel-items">
         <slot />
       </div>

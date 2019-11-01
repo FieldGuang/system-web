@@ -50,7 +50,7 @@
 <script>
 import ScrollPane from '@/components/ScrollPane'
 import path from 'path'
-import { constantRouterMap } from '@/router/routers'
+import { constantRoutes } from '@/router/routers'
 export default {
   components: { ScrollPane },
   data() {
@@ -81,6 +81,7 @@ export default {
     }
   },
   mounted() {
+    console.log('init-tagsView')
     this.initTags()
     this.addViewTags()
   },
@@ -90,6 +91,7 @@ export default {
     },
     filterAffixTags(routes, basePath = '/') {
       let tags = []
+      console.log('funny', routes)
       routes.forEach(route => {
         if (route.meta && route.meta.affix) {
           const tagPath = path.resolve(basePath, route.path)
@@ -110,7 +112,8 @@ export default {
       return tags
     },
     initTags() {
-      const affixTags = this.affixTags = this.filterAffixTags(constantRouterMap)
+      console.log('constant', constantRoutes)
+      const affixTags = this.affixTags = this.filterAffixTags(constantRoutes)
       for (const tag of affixTags) {
         // Must have tag name
         if (tag.name) {

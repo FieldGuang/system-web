@@ -1,12 +1,12 @@
 'use strict'
 const path = require('path')
-const defaultSettings = require('./src/settings.js')
+const defaultSettings = require('./src/config/index.js')
 
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || 'vue Element Admin' // page title
+const name = defaultSettings.title || 'BZL Admin' // page title
 
 // If your port is set to 80,
 // use administrator privileges to execute the command line.

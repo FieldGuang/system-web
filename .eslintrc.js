@@ -16,5 +16,10 @@ module.exports = {
     rules: {
         'no-console': 'off',
         'no-useless-escape': 0,
+        'no-unused-vars': [2, {
+            'vars': 'all',
+            'args': 'none'
+        }],
+        "vue/no-v-html": "off",  // 用于设置对v-html关键属性的检索
     }
 }
