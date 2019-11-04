@@ -130,14 +130,14 @@ export default {
   height: 100vh;
   width: 100%;
   max-width: 260px;
-  top: 0px;
-  left: 0px;
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .05);
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, .05);
   transition: all .25s cubic-bezier(.7, .3, .1, 1);
   transform: translate(100%);
   z-index: 40000;
   left: auto;
-  right: 0px;
+  right: 0;
 }
 
 .show {

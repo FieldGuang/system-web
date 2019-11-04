@@ -22,6 +22,9 @@ Vue.use(Router)
  **/
 // 设备管理
 const deviceManage = () => import('@/views/device-manage')
+const deviceType = () => import('@/views/device-manage/deviceType') // 设备类型管理
+
+
 // 订单管理
 const Order = () => import('@/views/order/index')
 // 日志管理
@@ -184,6 +187,12 @@ export const constantRoutes = [
         component: deviceManage,
         name: 'device',
         meta: { title: '设备列表', icon: 'fwb' }
+      },
+      {
+        path: 'deviceType',
+        component: deviceType,
+        name: 'deviceType',
+        meta: { title: '设备类型管理', icon: 'fwb' }
       }
     ]
   }

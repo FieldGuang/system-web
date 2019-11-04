@@ -206,7 +206,6 @@
           />
         </div>
       </template>
-
     </layout>
     <el-dialog
       title="添加设备"
@@ -460,7 +459,6 @@
       </div>
     </el-dialog>
   </main>
-
 </template>
 <script>
 	import Layout from '@/components/Layout'
@@ -470,7 +468,6 @@
 		},
 		data() {
 			return {
-        seta: true,
 				searchData: {
 					deviceName: '',
 					mapId: '',

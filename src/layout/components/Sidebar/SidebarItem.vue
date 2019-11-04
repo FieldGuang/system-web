@@ -22,7 +22,9 @@
       v-else
       ref="submenu"
       :index="resolvePath(item.path)"
+      popper-append-to-body
     >
+      <!--popper-append-to-body 使用该属性让其添加到父级body-->
       <template slot="title">
         <item
           v-if="item.meta"
