@@ -36,7 +36,11 @@
       <template
         v-for="(child, index) in item.children"
       >
-        <div class="sideItem" v-if="!child.hidden" :key="index">
+        <div
+          v-if="!child.hidden"
+          :key="index"
+          class="sideItem"
+        >
           <sidebar-item
             v-if="child.children&&child.children.length>0"
             :key="child.path"

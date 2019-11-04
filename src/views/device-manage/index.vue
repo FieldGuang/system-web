@@ -83,24 +83,25 @@
             size="small"
             @click="addDeviceDialog = true"
           >
+            <svg-icon icon-class="add"></svg-icon>
             添加
           </el-button>
           <el-button size="small">
+            <svg-icon icon-class="import"></svg-icon>
             导入
           </el-button>
         </el-row>
         <el-table
           ref="multipleTable"
-          border
           :data="tableData"
           tooltip-effect="dark"
           style="width: 100%"
-          :height="table.tableHeight"
+          height="300"
           @selection-change="handleSelectionChange"
         >
           <el-table-column
             fixed
-            prop="device_no"
+            prop="id"
             label="设备编号"
             width="120"
           />
@@ -151,8 +152,13 @@
             width="120"
           />
           <el-table-column
-            prop="creator"
-            label="创建人"
+            prop="speedMin"
+            label="最大后退速度"
+            width="120"
+          />
+          <el-table-column
+            prop="currentPosition"
+            label="当前位置坐标"
             width="120"
           />
           <el-table-column
@@ -206,11 +212,11 @@
           />
         </div>
       </template>
-
     </layout>
     <el-dialog
       title="添加设备"
       :visible.sync="addDeviceDialog"
+      append-to-body
     >
       <el-form :model="form">
         <el-form-item
@@ -397,6 +403,7 @@
     <el-dialog
       title="删除地图"
       :visible.sync="deleteDeviceDialog"
+      append-to-body
     >
       <span>确定删除{{ chooseRow.name }}吗？</span>
       <div
@@ -417,6 +424,7 @@
     <el-dialog
       title="切换地图"
       :visible.sync="changeMapDialog"
+      append-to-body
     >
       <el-form :model="form">
         <el-form-item
@@ -460,11 +468,12 @@
       </div>
     </el-dialog>
   </main>
-
 </template>
 <script>
 	import Layout from '@/components/Layout'
-	export default {
+  import { getDeviceList } from "@/api/device"
+
+  export default {
 		components: {
 			Layout
 		},
@@ -477,172 +486,7 @@
 					deviceId: '',
 					deviceLevel: ''
 				},
-				tableData: [{
-					date: '2016-05-03',
-					name: '王小虎1',
-					integrationLevel: '可以忽略',
-					length: 220,
-					energyLevelCritical: 10,
-					energyLevelGood: 90,
-					energyLevelFull: 100,
-					energyLevelAdvice: 20,
-					speedMax: 100,
-					speedMin: 10,
-					creator: "ljm",
-					createTime: "2019-10-10",
-					modify: "lpc",
-					modifyTime: "2019-12-12"
-				}, {
-					device_no: '2016-05-03',
-					name: '王小虎2',
-					integrationLevel: '可以忽略',
-					length: 220,
-					energyLevelCritical: 10,
-					energyLevelGood: 90,
-					energyLevelFull: 100,
-					energyLevelAdvice: 20,
-					speedMax: 100,
-					speedMin: 10,
-					creator: "ljm",
-					createTime: "2019-10-10",
-					modify: "lpc",
-					modifyTime: "2019-12-12"
-				}, {
-					device_no: '2016-05-03',
-					name: '王小虎',
-					integrationLevel: '可以忽略',
-					length: 220,
-					energyLevelCritical: 10,
-					energyLevelGood: 90,
-					energyLevelFull: 100,
-					energyLevelAdvice: 20,
-					speedMax: 100,
-					speedMin: 10,
-					creator: "ljm",
-					createTime: "2019-10-10",
-					modify: "lpc",
-					modifyTime: "2019-12-12"
-				}, {
-					device_no: '2016-05-03',
-					name: '王小虎',
-					integrationLevel: '可以忽略',
-					length: 220,
-					energyLevelCritical: 10,
-					energyLevelGood: 90,
-					energyLevelFull: 100,
-					energyLevelAdvice: 20,
-					speedMax: 100,
-					speedMin: 10,
-					creator: "ljm",
-					createTime: "2019-10-10",
-					modify: "lpc",
-					modifyTime: "2019-12-12"
-				}, {
-					device_no: '2016-05-03',
-					name: '王小虎',
-					integrationLevel: '可以忽略',
-					length: 220,
-					energyLevelCritical: 10,
-					energyLevelGood: 90,
-					energyLevelFull: 100,
-					energyLevelAdvice: 20,
-					speedMax: 100,
-					speedMin: 10,
-					creator: "ljm",
-					createTime: "2019-10-10",
-					modify: "lpc",
-					modifyTime: "2019-12-12"
-				}, {
-					device_no: '2016-05-03',
-					name: '王小虎',
-					integrationLevel: '可以忽略',
-					length: 220,
-					energyLevelCritical: 10,
-					energyLevelGood: 90,
-					energyLevelFull: 100,
-					energyLevelAdvice: 20,
-					speedMax: 100,
-					speedMin: 10,
-					creator: "ljm",
-					createTime: "2019-10-10",
-					modify: "lpc",
-					modifyTime: "2019-12-12"
-				}, {
-					device_no: '2016-05-03',
-					name: '王小虎',
-					integrationLevel: '可以忽略',
-					length: 220,
-					energyLevelCritical: 10,
-					energyLevelGood: 90,
-					energyLevelFull: 100,
-					energyLevelAdvice: 20,
-					speedMax: 100,
-					speedMin: 10,
-					creator: "ljm",
-					createTime: "2019-10-10",
-					modify: "lpc",
-					modifyTime: "2019-12-12"
-				}, {
-					device_no: '2016-05-03',
-					name: '王小虎',
-					integrationLevel: '可以忽略',
-					length: 220,
-					energyLevelCritical: 10,
-					energyLevelGood: 90,
-					energyLevelFull: 100,
-					energyLevelAdvice: 20,
-					speedMax: 100,
-					speedMin: 10,
-					creator: "ljm",
-					createTime: "2019-10-10",
-					modify: "lpc",
-					modifyTime: "2019-12-12"
-				}, {
-					device_no: '2016-05-03',
-					name: '王小虎',
-					integrationLevel: '可以忽略',
-					length: 220,
-					energyLevelCritical: 10,
-					energyLevelGood: 90,
-					energyLevelFull: 100,
-					energyLevelAdvice: 20,
-					speedMax: 100,
-					speedMin: 10,
-					creator: "ljm",
-					createTime: "2019-10-10",
-					modify: "lpc",
-					modifyTime: "2019-12-12"
-				}, {
-					device_no: '2016-05-03',
-					name: '王小虎',
-					integrationLevel: '可以忽略',
-					length: 220,
-					energyLevelCritical: 10,
-					energyLevelGood: 90,
-					energyLevelFull: 100,
-					energyLevelAdvice: 20,
-					speedMax: 100,
-					speedMin: 10,
-					creator: "ljm",
-					createTime: "2019-10-10",
-					modify: "lpc",
-					modifyTime: "2019-12-12"
-				}, {
-					device_no: '2016-05-03',
-					name: '王小虎',
-					integrationLevel: '可以忽略',
-					length: 220,
-					energyLevelCritical: 10,
-					energyLevelGood: 90,
-					energyLevelFull: 100,
-					energyLevelAdvice: 20,
-					speedMax: 100,
-					speedMin: 10,
-					creator: "ljm",
-					createTime: "2019-10-10",
-					modify: "lpc",
-					modifyTime: "2019-12-12"
-				},],
+				tableData: [],
 				multipleSelection: [],
 				addDeviceDialog: false,
 				deleteDeviceDialog: false,
@@ -673,8 +517,14 @@
 				tableHeight: "100px"
 			};
 		},
+    created() {this.tableData = [];},
 		mounted() {
-
+      this.tableData = [];
+      getDeviceList().then( res => {
+        if(res.code === 200) {
+          this.tableData = res.data.rows;
+        }
+      })
 		},
 		methods: {
 			onSubmit() {

@@ -14,6 +14,7 @@ const name = defaultSettings.title || 'BZL Admin' // page title
 // You can change the port by the following method:
 // port = 9527 npm run dev OR npm run dev --port = 9527
 const port = process.env.port || process.env.npm_config_port || 9527 // dev port
+const remote_port = 3000
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
@@ -45,7 +46,14 @@ module.exports = {
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
         }
-      }
+      },
+      [process.env.VUE_APP_REMOTE_API]: {
+        target: `http://10.8.202.180:${remote_port}/mock`,
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_REMOTE_API]: ''
+        }
+      },
     },
     after: require('./mock/mock-server.js')
   },

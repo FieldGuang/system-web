@@ -12,9 +12,10 @@
         <el-button
           size="small"
           type="primary"
+          icon="el-icon-search"
           @click="submitForm()"
         >
-          查询
+          搜索
         </el-button>
         <el-button
           size="small"
@@ -75,7 +76,6 @@ export default {
 #my-component {
   box-sizing:border-box;
   height: calc(100vh - 84px);
-  background: #f2f2f2;
   padding: 15px;
   .btn-group {
     button {

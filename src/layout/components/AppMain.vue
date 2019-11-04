@@ -37,14 +37,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import "~@/styles/variables.scss";
   .app-main {
-    z-index: 88;
+    /*z-index: 88;*/
     /*84 = navbar + tags-view = 50 +34 */
     min-height: calc(100vh - 84px);
     width: 100%;
     position: relative;
     overflow: hidden;
     padding-bottom: 12px;
+    background: $background-main;
   }
 
   .fixed-header+.app-main {
