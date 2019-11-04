@@ -25,8 +25,8 @@ const deviceManage = () => import('@/views/device-manage')
 const deviceType = () => import('@/views/device-manage/deviceType') // 设备类型管理
 
 
-// 订单管理
-const Order = () => import('@/views/order/index')
+// 任务管理
+const task = () => import('@/views/task/index')
 // 日志管理
 const deviceLog = () => import('@/views/log/deviceLog') // 设备日志
 const interfaceLog = () => import('@/views/log/interfaceLog') // 接口日志
@@ -86,7 +86,7 @@ export const constantRoutes = [
     path: '/user',
     component: Layout, // 不加重定向默认定位到index,
     name: 'user',
-    meta: {title: "个人中心", icon: "system", noCache: true},
+    // meta: {title: "个人中心", icon: "system", noCache: true},
     hidden: true,
     children: [
       {
@@ -103,7 +103,7 @@ export const constantRoutes = [
     component: Layout,
     name: '监控平台',
     redirect: "noredirect",
-    meta: {title: "监控平台", icon: "system", noCache: true},
+    // meta: {title: "监控平台", icon: "system", noCache: true},
     hidden: false,
     children: [
       {
@@ -115,18 +115,18 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/order',
+    path: '/task',
     component: Layout,
-    name: '订单管理',
+    name: '任务管理',
     redirect: "noredirect",
-    meta: {title: "订单管理", icon: "system", noCache: true},
+    // meta: {title: "订单管理", icon: "system", noCache: true},
     hidden: false,
     children: [
       {
         path: 'index',
-        component: Order,
+        component: task,
         name: 'Documentation',
-        meta: { title: '订单管理', icon: 'fwb' }
+        meta: { title: '任务管理', icon: 'fwb' }
       }
     ]
   },
@@ -179,7 +179,7 @@ export const constantRoutes = [
     component: Layout,
     name: '设备管理',
     redirect: "noredirect",
-    meta: {title: "设备管理", icon: "fwb", noCache: true},
+    // meta: {title: "设备管理", icon: "fwb", noCache: true},
     hidden: false,
     children: [
       {
