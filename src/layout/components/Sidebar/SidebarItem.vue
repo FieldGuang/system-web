@@ -34,31 +34,31 @@
       </template>
 
       <template
-        v-for="child in item.children"
-        v-if="!child.hidden"
+        v-for="(child, index) in item.children"
       >
-        <sidebar-item
-          v-if="child.children&&child.children.length>0"
-          :key="child.path"
-          :is-nest="true"
-          :item="child"
-          :base-path="resolvePath(child.path)"
-          class="nest-menu"
-        />
-
-        <app-link
-          v-else
-          :key="child.name"
-          :to="resolvePath(child.path)"
-        >
-          <el-menu-item :index="resolvePath(child.path)">
-            <item
-              v-if="child.meta"
-              :icon="child.meta.icon"
-              :title="child.meta.title"
-            />
-          </el-menu-item>
-        </app-link>
+        <div class="sideItem" v-if="!child.hidden" :key="index">
+          <sidebar-item
+            v-if="child.children&&child.children.length>0"
+            :key="child.path"
+            :is-nest="true"
+            :item="child"
+            :base-path="resolvePath(child.path)"
+            class="nest-menu"
+          />
+          <app-link
+            v-else
+            :key="child.name"
+            :to="resolvePath(child.path)"
+          >
+            <el-menu-item :index="resolvePath(child.path)">
+              <item
+                v-if="child.meta"
+                :icon="child.meta.icon"
+                :title="child.meta.title"
+              />
+            </el-menu-item>
+          </app-link>
+        </div>
       </template>
     </el-submenu>
   </div>
