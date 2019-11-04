@@ -48,7 +48,7 @@ module.exports = {
         }
       },
       [process.env.VUE_APP_REMOTE_API]: {
-        target: `http://10.8.202.180:${remote_port}/mock`,
+        target: `http://10.8.202.180:${remote_port}/mock/11`,
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_REMOTE_API]: ''
