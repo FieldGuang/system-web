@@ -22,7 +22,9 @@
       v-else
       ref="submenu"
       :index="resolvePath(item.path)"
+      popper-append-to-body
     >
+      <!--popper-append-to-body 使用该属性让其添加到父级body-->
       <template slot="title">
         <item
           v-if="item.meta"
@@ -32,31 +34,35 @@
       </template>
 
       <template
-        v-for="child in item.children"
-        v-if="!child.hidden"
+        v-for="(child, index) in item.children"
       >
-        <sidebar-item
-          v-if="child.children&&child.children.length>0"
-          :key="child.path"
-          :is-nest="true"
-          :item="child"
-          :base-path="resolvePath(child.path)"
-          class="nest-menu"
-        />
-
-        <app-link
-          v-else
-          :key="child.name"
-          :to="resolvePath(child.path)"
+        <div
+          v-if="!child.hidden"
+          :key="index"
+          class="sideItem"
         >
-          <el-menu-item :index="resolvePath(child.path)">
-            <item
-              v-if="child.meta"
-              :icon="child.meta.icon"
-              :title="child.meta.title"
-            />
-          </el-menu-item>
-        </app-link>
+          <sidebar-item
+            v-if="child.children&&child.children.length>0"
+            :key="child.path"
+            :is-nest="true"
+            :item="child"
+            :base-path="resolvePath(child.path)"
+            class="nest-menu"
+          />
+          <app-link
+            v-else
+            :key="child.name"
+            :to="resolvePath(child.path)"
+          >
+            <el-menu-item :index="resolvePath(child.path)">
+              <item
+                v-if="child.meta"
+                :icon="child.meta.icon"
+                :title="child.meta.title"
+              />
+            </el-menu-item>
+          </app-link>
+        </div>
       </template>
     </el-submenu>
   </div>

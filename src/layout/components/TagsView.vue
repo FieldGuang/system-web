@@ -91,7 +91,6 @@ export default {
     },
     filterAffixTags(routes, basePath = '/') {
       let tags = []
-      console.log('funny', routes)
       routes.forEach(route => {
         if (route.meta && route.meta.affix) {
           const tagPath = path.resolve(basePath, route.path)
@@ -224,18 +223,20 @@ export default {
 .tags-view-container {
   height: 45px;
   width: 100%;
-  background: rgb(245,247,249);
-  border-bottom: 1px solid rgb(245,247,249);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 3px 0 rgba(0, 0, 0, .04);
+  background: #F7F7F7;
+  /*border-bottom: 1px solid rgb(245,247,249);*/
+  /*box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 3px 0 rgba(0, 0, 0, .04);*/
   .tags-view-wrapper {
+
     .tags-view-item {
+
       display: inline-block;
       position: relative;
       cursor: pointer;
       height: 34px;
       border-radius: 5px;
       line-height: 34px;
-      color: #495060;
+      color: #808695;
       background: #fff;
       padding: 0 8px;
       font-size: 14px;

@@ -9,10 +9,11 @@
     <svg-icon
       v-if="isCollapse"
       icon-class="run"
+      class="svg-item"
     />
     <!--正常状态下显示的，可以使用本地的logoImg-->
     <div class="logo-con">
-      <img src="">
+      <img src="../../../assets/background/logo.png">
       <!--<img :src="logoImg">-->
     </div>
   </el-menu-item>
@@ -34,6 +35,9 @@ export default {
       // logoImg: logoImg
     }
   },
+  mounted() {
+    console.log(this.isCollapse)
+  },
   computed: {
     ...mapState({
       sidebarLogo: state => state.settings.sidebarLogo
@@ -42,6 +46,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+  .submenu-title-noDropdown {
+    margin-left: 40% !important;
+  }
+  .logo-con {
+    img {
+      width: 170px;
+    }
+  }
 
 </style>

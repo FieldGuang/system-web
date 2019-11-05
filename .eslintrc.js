@@ -21,5 +21,6 @@ module.exports = {
             'args': 'none'
         }],
         "vue/no-v-html": "off",  // 用于设置对v-html关键属性的检索
+        'no-mixed-spaces-and-tabs': 2,
     }
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>按钮_重置</title>
+    <desc>Created with Sketch.</desc>
+    <g id="按钮_重置" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic-replay-24px">
+            <polygon id="Path" points="0 0 20 0 20 20 0 20"></polygon>
+            <path d="M10,4.75 L10,1.75 L6.25,5.5 L10,9.25 L10,6.25 C12.4825,6.25 14.5,8.2675 14.5,10.75 C14.5,13.2325 12.4825,15.25 10,15.25 C7.5175,15.25 5.5,13.2325 5.5,10.75 L4,10.75 C4,14.065 6.685,16.75 10,16.75 C13.315,16.75 16,14.065 16,10.75 C16,7.435 13.315,4.75 10,4.75 Z" id="Path" fill="#333333" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

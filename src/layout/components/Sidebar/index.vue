@@ -6,8 +6,8 @@
       :collapse="isCollapse"
       :unique-opened="$store.state.settings.uniqueOpened"
       mode="vertical"
-      background-color="#304156"
-      text-color="#bfcbd9"
+      background-color="#ffffff"
+      text-color="#515a6e"
       active-text-color="#409EFF"
     >
       <Logo :is-collapse="isCollapse" />
